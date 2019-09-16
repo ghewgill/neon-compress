@@ -187,6 +187,6 @@ else:
         env.Append(CPPPATH=["xz-5.2.1/src/liblzma/api"])
     conf.Finish()
 
-env.Append(CPPPATH=["../../src"])
+env.Append(CPPPATH=["../../common"])
 env.Append(LIBS=[x for x in [libz, libbz2, liblzma] if x])
 env.SharedLibrary("neon_compress", "compress.cpp")
