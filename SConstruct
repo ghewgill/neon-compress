@@ -42,7 +42,7 @@ if sys.platform == "win32":
 else:
     conf = Configure(env)
     if not conf.CheckLibWithHeader("z", "zlib.h", "C++"):
-        libz = libzenv.Command("zlib-1.2.8/libz.a", "zlib-1.2.8/configure", "cd lib/compress/zlib-1.2.8 && env CFLAGS=-fPIC ./configure --static && make")
+        libz = libzenv.Command("zlib-1.2.8/libz.a", "zlib-1.2.8/configure", "cd zlib-1.2.8 && env CFLAGS=-fPIC ./configure --static && make")
         env.Append(CPPPATH=["zlib-1.2.8"])
     conf.Finish()
 
@@ -79,7 +79,7 @@ if sys.platform == "win32":
 else:
     conf = Configure(env)
     if not conf.CheckLibWithHeader("bz2", "bzlib.h", "C++"):
-        libbz2 = bz2env.Command("bzip2-1.0.6/libbz2.a", "bzip2-1.0.6/Makefile", "cd lib/compress/bzip2-1.0.6 && make")
+        libbz2 = bz2env.Command("bzip2-1.0.6/libbz2.a", "bzip2-1.0.6/Makefile", "cd bzip2-1.0.6 && make")
         env.Append(CPPPATH=["bzip2-1.0.6"])
     conf.Finish()
 
@@ -183,7 +183,7 @@ if sys.platform == "win32":
 else:
     conf = Configure(env)
     if not conf.CheckLibWithHeader("lzma", "lzma.h", "C++"):
-        liblzma = lzmaenv.Command("xz-5.2.1/src/liblzma/.libs/liblzma.a", "xz-5.2.1/configure", "cd lib/compress/xz-5.2.1 && ./configure --with-pic --enable-static && make")
+        liblzma = lzmaenv.Command("xz-5.2.1/src/liblzma/.libs/liblzma.a", "xz-5.2.1/configure", "cd xz-5.2.1 && ./configure --with-pic --enable-static && make")
         env.Append(CPPPATH=["xz-5.2.1/src/liblzma/api"])
     conf.Finish()
 

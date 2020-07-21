@@ -1,0 +1,9 @@
+image: debian/stable
+packages:
+- scons
+sources:
+- https://github.com/ghewgill/neon-compress
+tasks:
+- build: |
+    cd neon-compress
+    scons
