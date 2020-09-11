@@ -7,16 +7,16 @@ s := "hello gzip world"
 b := compress.gzip(s.toBytes())
 t := compress.gunzip(b)
 print(t.decodeToString())
-#= hello gzip world
+--= hello gzip world
 
 s := "hello bzip2 world"
 b := compress.bzip2(s.toBytes())
 t := compress.bunzip2(b)
 print(t.decodeToString())
-#= hello bzip2 world
+--= hello bzip2 world
 
 s := "hello lzma world"
 b := compress.lzma(s.toBytes())
 t := compress.unlzma(b)
 print(t.decodeToString())
-#= hello lzma world
+--= hello lzma world
